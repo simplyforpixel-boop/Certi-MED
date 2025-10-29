@@ -1,0 +1,33 @@
+/*
+  This file contains the custom CSS.
+  The 'animate-fade-in-up' class in index.html uses these keyframes.
+  The 'hidden' class is used by JavaScript to show/hide modals and menus.
+*/
+
+/* Re-implementation of the 'hidden' class utility from Tailwind
+  to ensure JavaScript-controlled elements are hidden correctly.
+*/
+.hidden {
+    display: none;
+}
+
+/* Keyframes for the 'fade-in-up' animation.
+  This was extracted from the inline tailwind.config script.
+*/
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Class that applies the animation.
+  The 'opacity-0' class in the HTML sets the initial state.
+*/
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
